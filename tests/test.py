@@ -23,9 +23,8 @@ class Tests(object):
             facebook_username = input('What is your Facebook username?\n')
             facebook_password = getpass.getpass()
             facebook_access_token = facebook_auth_token.get_facebook_access_token(facebook_username, facebook_password)
-            facebook_user_id = facebook_auth_token.get_facebook_id(facebook_access_token)
-            api_token = self._tinder_api.get_facebook_auth_token(facebook_auth_token, facebook_user_id)
-        print("Your api token is '{api_token}'. Please make not of it.\n".format(api_token=api_token))
+            api_token = self._tinder_api.get_facebook_auth_token(facebook_access_token)
+        print("Your api token is '{api_token}'. Please make a note of it.\n".format(api_token=api_token))
 
 
     def authenticate(self, api_token):
